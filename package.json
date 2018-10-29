@@ -9,9 +9,10 @@
   },
   "dependencies": {
     "gatsby": "^2.0.0",
-    "gatsby-image": "^2.0.17",
+    "gatsby-image": "^2.0.0-rc.4",
     "gatsby-plugin-sharp": "^2.0.8",
     "gatsby-plugin-typography": "^2.2.0",
+    "gatsby-source-filesystem": "^2.0.5",
     "gatsby-transformer-sharp": "^2.1.5",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
