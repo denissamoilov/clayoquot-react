@@ -8,6 +8,14 @@
 .logo {
     position: absolute;
     left: 4vw;
-    top: 4vw;
-    width: 
+    top: 2vw;
+    max-width: 350px;
+    min-width: 200px;
+    width: 17.5vw;
+}
+
+.logo img {
+    display: block;
+    margin: 0;
+    width: 100%;
 }

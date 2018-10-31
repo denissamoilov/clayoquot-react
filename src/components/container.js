@@ -1,6 +1,6 @@
-import React from "react"
-import containerStyles from "./css/container.module.css"
+import React from "react";
+import mainWrapperStyles from "./css/container.module.css";
 
-export default ({ children }) => (
-    <div className={containerStyles.container}>{children}</div>
+export default({children}) => (
+    <div className={mainWrapperStyles.wrapper}>{children}</div>
 )

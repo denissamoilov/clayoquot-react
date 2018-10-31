@@ -1,9 +1,11 @@
 import React from "react"
-import Img from "gatsby-image"
+// import Img from "gatsby-image"
 import { StaticQuery, graphql } from "gatsby"
+import Container from "./container"
 
 
 import headerStyles from "./css/header.module.css"
+import logo from "../images/logo.svg"
 
 
 export default () => (
@@ -30,14 +32,15 @@ export default () => (
         `}
         render = { data => {
             
-                console.log('data: ', data)
-            
                 return (
 
                     <header className={headerStyles.header}>
-                        <a className={headerStyles.logo} href="index.js">
-                            <Img fixed={data.imageOne.childImageSharp.fluid} />
-                        </a>
+                        <Container>
+                            <a className={headerStyles.logo} href="index.js">
+                                <img src={logo} alt="Logo" />
+                                {/* <Img fixed={data.imageOne.childImageSharp.fluid} /> */}
+                            </a>
+                        </Container>
                     </header>
                 )
             }

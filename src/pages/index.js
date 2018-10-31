@@ -3,20 +3,23 @@ import React from "react"
 import Header from "../components/header"
 import Container from "../components/container"
 import Slider from "../components/slider"
-import Topimage from "../components/topimage"
+import TopimageSlide from "../components/topimage-slide"
+import TopImages from "../components/topimages"
 
 export default () => (
     <div>
         <Header />
 
-        <Slider>
-            <Topimage
-                src="https://source.unsplash.com/random/1920x900"
-                caption="Pharetra Ridiculus Bibendum Cursus"
-                align="right"
-                valign="middle"
-            />
-        </Slider>
+        <TopImages>
+            <Slider>
+                <TopimageSlide
+                    src="https://source.unsplash.com/random/1920x900"
+                    caption="Pharetra Ridiculus Bibendum Cursus"
+                    align="right"
+                    valign="middle"
+                />
+            </Slider>
+        </TopImages>
         
         <Container>
             <h1>Richard Hamming on Luck</h1>

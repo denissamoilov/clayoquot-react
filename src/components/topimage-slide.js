@@ -1,6 +1,6 @@
 import React from "react"
 
-import slideStyles from "./css/topimage.module.css"
+import slideStyles from "./css/topimage-slide.module.css"
 
 const Slide = props => (
 
