@@ -1,5 +1,9 @@
 const path = require(`path`)
 
+require("dotenv").config({
+    path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
     plugins: [
         {
@@ -8,13 +12,19 @@ module.exports = {
                 pathToConfigModule: `src/utils/typography.js`,
             },
         },
-        // {
-        //     resolve: `gatsby-source-contentful`,
-        //     options: {
-        //         spaceId: `4y1g93b95ep2`,
-        //         accessToken: `7d13661d4c228410ccd617692cfe78879b11b88c004c3835b3c197becee7e41e`,
-        //     },
-        // },
+        {
+            resolve: `gatsby-source-prismic`,
+            options: {
+                repositoryName: `samoilov`,
+                // accessToken: `${process.env.API_KEY}`,
+                accessToken: "MC5XOXMyUnhJQUFDMEFiMmZZ.Iu-_vXVl77-9b1UB77-9R0vvv70BdO-_vQEf77-9VC7vv71377-977-977-977-9HO-_ve-_vUt_77-9",
+                linkResolver: ({
+                    node,
+                    key,
+                    value
+                }) => post => `/${post.uid}`,
+            },
+        },
         {
             resolve: `gatsby-source-filesystem`,
             options: {

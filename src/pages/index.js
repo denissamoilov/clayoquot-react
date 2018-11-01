@@ -2,41 +2,83 @@ import React from "react"
 
 import Header from "../components/header"
 import Container from "../components/container"
-import Slider from "../components/slider"
-import TopimageSlide from "../components/topimage-slide"
 import TopImages from "../components/topimages"
 
-export default () => (
+import { graphql } from "gatsby"
+
+const Index = ({ data: { prismicHomepage } }) => (
     <div>
         <Header />
+        <TopImages images={prismicHomepage.data.topimages} />
+            {/* <Slider>
 
-        <TopImages>
-            <Slider>
-                <TopimageSlide
-                    src="https://source.unsplash.com/random/1920x900"
-                    caption="Pharetra Ridiculus Bibendum Cursus"
-                    align="right"
-                    valign="middle"
-                />
+                {prismicHomepage.data.topimages.reduce((obj, rule) => {
+                    obj[rule.name] = { body: [], type: rule.type }
+                    return obj;
+                }, {})}
+
+
+                {/* {prismicHomepage.data.topimages.forEach(function(item){
+                    console.log('item: ', item.top_image.url);
+                    // <TopimageSlide
+                    //     src="https://source.unsplash.com/random/1920x900"
+                    //     caption="Pharetra Ridiculus Bibendum Cursus"
+                    //     align="right"
+                    //     valign="middle"
+                    // />
+                })} */}
+ 
+                {/* {prismicHomepage.data.topimages.map( ({node: image}) => {
+                    console.log('lala: ', image)
+                    return (
+                        <TopimageSlide
+                            src="https://source.unsplash.com/random/1920x900"
+                            caption="Pharetra Ridiculus Bibendum Cursus"
+                            align="right"
+                            valign="middle"
+                        />
+                    )
+                })} * /}
+                
             </Slider>
-        </TopImages>
+        </TopImages> */}
         
         <Container>
-            <h1>Richard Hamming on Luck</h1>
-            <div>
-                <p>
-                    From Richard Hamming’s classic and must-read talk, “<a href="http://www.cs.virginia.edu/~robins/YouAndYourResearch.html">You and Your Research</a>”.
-                </p>
-                <blockquote>
-                    <p>
-                        There is indeed an element of luck, and no, there isn’t. The prepared mind sooner or later finds something important and does it. So yes, it is luck.{" "}
-                        <em>
-                            The particular thing you do is luck, but that you do something is not.
-            </em>
-                    </p>
-                </blockquote>
-            </div>
-            <p>Posted April 09, 2011</p>
+            <h1>{prismicHomepage.data.title.text}</h1>
+            <h2>{prismicHomepage.data.subtitle.text}</h2>
+            <div dangerouslySetInnerHTML={{ __html: prismicHomepage.data.copy.html }} />
         </Container>
     </div>
 )
+
+export default Index
+
+export const pageQuery = graphql`
+    query IndexQuery {
+        prismicHomepage {
+            data {
+                topimages {
+                    top_image {
+                        url
+                    }
+                    position
+                    marketing_message {
+                        text
+                    }
+                    marketing_message_2 {
+                        text
+                    }
+                }
+                title {
+                    text
+                }
+                subtitle {
+                    text
+                }
+                copy {
+                    html
+                }
+            }
+        }
+    }
+`;
