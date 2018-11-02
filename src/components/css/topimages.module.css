@@ -28,17 +28,17 @@
     margin: 0 auto;
     max-width: 1440px;
     min-width: 320px;
-    padding: 4vw;
+    padding: 150px 4vw 4vw;
     position: relative;
     text-align: left;
     width: 100%;
     z-index: 2;
 }
 
-.strong {
+h1 {
     font-weight: bold;
 }
-.small {
+p {
     font-size: 0.75em;
 }
 

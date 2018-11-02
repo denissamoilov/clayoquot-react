@@ -63,10 +63,7 @@ export const pageQuery = graphql`
                     }
                     position
                     marketing_message {
-                        text
-                    }
-                    marketing_message_2 {
-                        text
+                        html
                     }
                 }
                 title {

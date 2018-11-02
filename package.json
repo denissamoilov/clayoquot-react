@@ -18,6 +18,7 @@
     "gatsby-transformer-sharp": "^2.1.5",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
+    "react-id-swiper": "^1.6.8",
     "react-typography": "^0.16.13",
     "typography": "^0.16.17"
   },
