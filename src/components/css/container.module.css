@@ -3,6 +3,7 @@
     max-width: 1440px;
     margin: 0 auto;
     min-width: 320px;
-    padding: 0 2vw;
+    padding: 0 4vw;
     position: relative;
+    width: 100%;
 }

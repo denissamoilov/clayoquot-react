@@ -3,7 +3,6 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Container from "./container"
 
-
 import headerStyles from "./css/header.module.css"
 import logo from "../images/logo.svg"
 
