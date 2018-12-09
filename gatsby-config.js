@@ -5,6 +5,9 @@ require("dotenv").config({
 })
 
 module.exports = {
+    siteMetadata: {
+        title: 'The Gray Web Blog',
+    },
     plugins: [
         {
             resolve: `gatsby-plugin-typography`,

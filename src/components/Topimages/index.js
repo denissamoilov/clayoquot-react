@@ -1,10 +1,10 @@
 import React from "react"
 import Swiper from 'react-id-swiper';
-import TopImagesStyles from "./css/topimages.module.css"
+import TopImagesStyles from "./styles/topimages.module.css"
 
 const buildSlides = imgs => {
-    return imgs.map((image) => (
-        <figure className={TopImagesStyles.slide} style={{backgroundImage: `url(${image.top_image.url})`}}>
+    return imgs.map((image, index) => (
+        <figure key={index} className={TopImagesStyles.slide} style={{backgroundImage: `url(${image.top_image.url})`}}>
             <img className={TopImagesStyles.img} src={image.top_image.url} alt=""/>
             <figcaption className={`${image.message_valign} ${image.message_align} ${TopImagesStyles.caption}`}>
                 <div className={TopImagesStyles.wrapper} dangerouslySetInnerHTML={{ __html: image.marketing_message.html }} />

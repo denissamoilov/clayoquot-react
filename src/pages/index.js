@@ -1,8 +1,8 @@
 import React from "react"
 
-import Header from "../components/header"
-import Container from "../components/container"
-import TopImages from "../components/topimages"
+import Header from "../components/Header"
+import Container from "../components/Container"
+import TopImages from "../components/Topimages"
 
 import { graphql } from "gatsby"
 
